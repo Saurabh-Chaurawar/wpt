@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Department Management System</h1>
+    </header>
+    <div>
+        <form action="/addDepartment">
+            <button type="submit">Add New Department</button>
+        </form><br/>
+        <table border="2">
+            <tr>
+                <th>Department Number</th>
+                <th>Department Name</th>
+                <th>Location</th>
+            </tr>
+            <%for(var i = 0; i<deptdata.length;i++){%>
+                <tr>
+                    <td><%=deptdata[i].DEPTNO%></td>
+                    <td><%=deptdata[i].DNAME%></td>
+                    <td><%=deptdata[i].LOC%></td>
+                    <td><a href="/deleteDept/<%=deptdata[i].DEPTNO%>">Delete</a></td>
+                    <td><a href="/editDept/<%=deptdata[i].DEPTNO%>">Edit</a></td>
+                </tr>
+            <%}%>
+        </table>
+    </div>
+    
+</body>
+</html>
